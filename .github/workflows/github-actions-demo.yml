@@ -15,11 +15,13 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: Print event name and branch name
+        run: |
            echo "🎉 The job was triggered by event: ${{ github.event_name }}"
            echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ."
 
-      - uses: actions/checkout@v3.3.0
+      - name: Checkout
+        uses: actions/checkout@v6.0.1
 
       - name: List files
         run: |
